@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>REM Aurical FreeFit · راهنمای سریع</title>
+<style>*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=IBM+Plex+Sans:wght@500;600&display=swap">
+<style>
+:root{
+  --navy:#1c2654; --navy-2:#2b3a78; --orange:#d8782f; --orange-soft:#fbeee3;
+  --bg:#f5f6fa; --card:#ffffff; --ink:#161d3d; --muted:#5b6285; --line:#e1e4ef;
+  --warn-bg:#fff4e8; --warn-ink:#8a4210; --danger-bg:#fdecec; --danger-ink:#9b1c1c;
+  --ok:#1f7a4d; --chip:#eef0f8; --head-fill:#ffffff; --head-stroke:#1c2654;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0f1328; --card:#171c38; --ink:#e8eaf6; --muted:#a3a9c9; --line:#2a3160;
+    --navy:#1c2654; --orange:#ec8c44; --orange-soft:#3a2615;
+    --warn-bg:#33230f; --warn-ink:#f5c08f; --danger-bg:#3a1717; --danger-ink:#f4a9a9;
+    --ok:#5fd19b; --chip:#232a52; --head-fill:#1f2547; --head-stroke:#c8cdf0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0f1328; --card:#171c38; --ink:#e8eaf6; --muted:#a3a9c9; --line:#2a3160;
+  --navy:#1c2654; --orange:#ec8c44; --orange-soft:#3a2615;
+  --warn-bg:#33230f; --warn-ink:#f5c08f; --danger-bg:#3a1717; --danger-ink:#f4a9a9;
+  --ok:#5fd19b; --chip:#232a52; --head-fill:#1f2547; --head-stroke:#c8cdf0;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Vazirmatn",Tahoma,"Segoe UI",sans-serif;font-size:16px;line-height:1.85;direction:rtl;margin:0}
+.en{font-family:"IBM Plex Sans",system-ui,sans-serif;direction:ltr;unicode-bidi:isolate}
+.btn{font-family:"IBM Plex Sans",system-ui,sans-serif;direction:ltr;unicode-bidi:isolate;display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:0 .45em;font-size:.86em;font-weight:600;line-height:1.7;white-space:nowrap}
+header.top{background:#1c2654;color:#fff;padding:22px 16px 0;position:relative}
+.top-inner{max-width:720px;margin:0 auto;display:flex;gap:14px;align-items:center}
+.badge{flex:none;width:58px;height:58px;border-radius:14px;background:#fff;display:grid;place-items:center}
+.eyebrow{font-size:13px;color:#f3b27f;font-weight:500;letter-spacing:.02em}
+h1{margin:0;font-size:24px;line-height:1.35;font-weight:800;text-wrap:balance}
+h1 .en{font-weight:600;font-size:.8em;opacity:.85;display:block;margin-top:2px;text-align:right}
+.step-edge{height:26px;margin-top:18px;background:var(--bg);clip-path:polygon(0 65%,9% 65%,12% 0,88% 0,91% 65%,100% 65%,100% 100%,0 100%);position:relative}
+.edge-line{position:absolute;inset:auto 0 0 0;height:26px}
+nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.jump .row{max-width:720px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav.jump a{flex:none;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:500}
+nav.jump a:focus-visible,summary:focus-visible,label:focus-within{outline:2px solid var(--orange);outline-offset:2px}
+main{max-width:720px;margin:0 auto;padding-block:18px 40px;padding-inline:16px;display:grid;gap:18px}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px;scroll-margin-top:64px}
+h2{margin:0 0 10px;font-size:19px;font-weight:800;display:flex;align-items:center;gap:10px;color:var(--ink)}
+h2 .n{flex:none;width:30px;height:30px;border-radius:9px;background:#1c2654;color:#fff;display:grid;place-items:center;font-size:15px}
+h2 .n.o{background:var(--orange)}
+p{margin:.3em 0}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:10px}
+ol.steps>li{counter-increment:s;position:relative;padding-inline-start:36px}
+ol.steps>li::before{content:counter(s,persian);position:absolute;inset-inline-start:0;top:3px;width:24px;height:24px;border-radius:50%;border:2px solid var(--orange);color:var(--orange);font-weight:700;font-size:13px;display:grid;place-items:center;line-height:1}
+ul.plain{margin:.2em 0;padding-inline-start:1.2em}
+ul.plain li{margin:.2em 0}
+.check{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.check label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;cursor:pointer}
+.check label:hover{background:var(--chip)}
+.check input{margin-top:6px;width:18px;height:18px;accent-color:var(--orange);flex:none}
+.check input:checked+span{color:var(--muted);text-decoration:line-through}
+.progress{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.progress button{font:inherit;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:2px 10px;cursor:pointer}
+.note{border-radius:10px;padding:10px 12px;font-size:15px;margin-top:10px}
+.note.warn{background:var(--warn-bg);color:var(--warn-ink)}
+.note.danger{background:var(--danger-bg);color:var(--danger-ink)}
+.note b{font-weight:800}
+.kpi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0 4px}
+.kpi>div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-align:center}
+.kpi .v{font-family:"IBM Plex Sans",sans-serif;direction:ltr;font-size:26px;font-weight:600;color:var(--orange);font-variant-numeric:tabular-nums;line-height:1.3}
+.kpi .l{font-size:13px;color:var(--muted)}
+.montage{display:grid;grid-template-columns:minmax(0,190px) 1fr;gap:16px;align-items:center}
+.montage svg{width:100%;height:auto}
+table.leg{border-collapse:collapse;width:100%;font-size:14.5px}
+table.leg td{padding:6px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+table.leg td:first-child{font-weight:700;width:34%;padding-inline-end:10px}
+main>*{min-width:0}
+details{border:1px solid var(--line);border-radius:10px;padding:0 12px;margin-top:8px}
+details[open]{padding-bottom:8px}
+summary{cursor:pointer;font-weight:700;padding:10px 0;list-style:none;display:flex;justify-content:space-between;gap:8px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--orange);font-weight:800}
+details[open] summary::after{content:"–"}
+footer{max-width:720px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted);line-height:1.8}
+footer .draft{display:inline-block;background:var(--orange-soft);color:var(--orange);font-weight:700;border-radius:6px;padding:0 8px;margin-bottom:6px}
+@media (max-width:460px){.montage{grid-template-columns:1fr}.montage svg{max-width:210px;margin:0 auto}h1{font-size:21px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+.contact{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--orange);border-radius:14px;padding:14px 16px}
+.contact .who{font-size:14px;color:var(--muted)}
+.contact .name{font-weight:800;font-size:17px;color:var(--ink)}
+.contact .num{font-family:"IBM Plex Sans",sans-serif;direction:ltr;unicode-bidi:isolate;font-size:22px;font-weight:600;letter-spacing:.04em;color:var(--ink);user-select:all;font-variant-numeric:tabular-nums}
+.contact .acts{display:flex;gap:8px}
+.contact a,.contact button{font:inherit;font-size:14px;font-weight:700;border-radius:10px;padding:7px 14px;cursor:pointer;text-decoration:none;border:1px solid var(--line)}
+.contact a{background:#1c2654;color:#fff;border-color:#1c2654}
+.contact button{background:var(--card);color:var(--ink)}
+.kpi .v{font-size:21px}
+h3.sub{font-size:16px;font-weight:800;margin:14px 0 8px;color:var(--orange)}
+footer .home{display:inline-block;margin:0 0 10px;color:var(--orange);font-weight:700;text-decoration:none}
+</style>
+
+
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 64 64" width="42" height="42"><rect x="2" y="2" width="60" height="60" rx="12" fill="#1c2654"/>
+        <g fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"><path d="M26 30c0-10 6-15 12-15 7 0 12 5 12 13 0 8-6 10-8 15-1.6 4-4 6-7.5 6-3.4 0-5.6-2-6-5"/><path d="M33.5 31c0-4 2.5-6.5 5.5-6.5s5.2 2.6 5.2 6c0 3.5-3.3 4.8-4.5 6.8"/></g>
+        <g fill="none" stroke="#d8782f" stroke-width="3.6" stroke-linecap="round"><path d="M19 26c-2.6 2.6-2.6 7 0 9.6"/><path d="M13.5 21.5c-5 5-5 13.6 0 18.6"/></g>
+      </svg>
+    </div>
+    <div>
+
+      <div class="eyebrow">راهنمای سریع دستگاه · کلینیک شنوایی‌شناسی</div>
+      <h1>راهنمای <span style="font-family:IBM Plex Sans,sans-serif">REM</span> با <span style="font-family:IBM Plex Sans,sans-serif">Aurical FreeFit</span><span class="en">Natus Aurical FreeFit · OTOsuite PMM</span></h1>
+    </div>
+  </div>
+  <div class="step-edge"></div>
+</header>
+
+<nav class="jump" aria-label="بخش‌ها"><div class="row">
+  <a href="#safety">Safety</a><a href="#prep">Setup</a><a href="#calib">Tube Calibration</a><a href="#place">Probe Placement</a><a href="#measure">Measurements</a><a href="#finish">Finish</a><a href="#trouble">Troubleshooting</a>
+</div></nav>
+<main>
+<div class="contact" id="contact">
+  <div><div class="who">سؤال یا مشکل داشتید؟ تماس بگیرید با</div><div class="name">کلینیک شنوایی‌شناسی</div><div class="num">021 7753 0636</div></div>
+  <div class="acts"><a href="tel:02177530636">تماس</a><button type="button" class="copy">کپی شماره</button></div>
+</div>
+
+
+<section class="card" id="safety">
+  <h2><span class="n o">!</span>قبل از هر چیز</h2>
+  <div class="note danger">نوک <span class="en">probe tube</span> نباید به <span class="en">eardrum</span> بخورد: حداقل <b><span class="en">4 mm</span></b> فاصله. اگر بیمار درد یا صدای خراشیدن حس کرد، <b>فوراً</b> لوله را کمی عقب بکشید.</div>
+  <ul class="plain">
+    <li><span class="en">Otoscopy</span> قبل از گذاشتن لوله: جرم، عفونت یا <span class="en">perforation</span> دیدید، با کلینیک هماهنگ کنید.</li>
+    <li><span class="en">Probe tube</span> و <span class="en">eartip</span> <b>یک‌بارمصرف</b> است؛ برای هر بیمار نو.</li>
+    <li>در سیگنال بلند (<span class="en">80 dB SPL</span> و <span class="en">MPO</span>) از بیمار بپرسید ناراحت‌کننده است یا نه؛ اگر بله، متوقف کنید.</li>
+    <li><span class="en">FreeFit</span> را وقتی داخل <span class="en">charger</span> است روی بیمار استفاده نکنید. <span class="en">Probe</span>ها را در آب یا محلول فرو نبرید.</li>
+  </ul>
+</section>
+
+<section class="card" id="prep">
+  <h2><span class="n">۱</span>آماده‌سازی <span class="en" style="font-weight:600;color:var(--muted);font-size:.8em">Setup</span></h2>
+  <ul class="check" id="checklist">
+    <li><label><input type="checkbox" id="c1"><span><span class="en">FreeFit</span> شارژ است؛ دکمه‌ی <span class="en">power</span> بالای دستگاه را نگه دارید تا چراغ روشن شود (بعد چشمک می‌زند).</span></label></li>
+    <li><label><input type="checkbox" id="c2"><span><span class="en">OTOsuite</span> باز است و ماژول <span class="en">PMM</span> به <span class="en">FreeFit</span> وصل شده (<span class="en">Bluetooth</span>).</span></label></li>
+    <li><label><input type="checkbox" id="c3"><span><span class="en">Audiogram</span> بیمار در <span class="en">OTOsuite</span> وارد شده و <span class="en">target rule</span> (مثل <span class="en">NAL-NL2</span> یا <span class="en">DSL</span>) طبق نظر مربی انتخاب شده.</span></label></li>
+    <li><label><input type="checkbox" id="c4"><span>اتاق ساکت است؛ بیمار حدود <span class="en">0.5–1 m</span> روبه‌روی بلندگو (<span class="en">0°</span> یا <span class="en">45°</span>، <b>نه</b> <span class="en">90°</span>).</span></label></li>
+    <li><label><input type="checkbox" id="c5"><span><span class="en">Probe tube</span> نو، <span class="en">ear hook</span> و سمعک برنامه‌ریزی‌شده آماده است.</span></label></li>
+  </ul>
+  <div class="progress"><span id="prog">۰ از ۵ انجام شده</span><button type="button" id="reset">پاک کردن تیک‌ها</button></div>
+</section>
+
+<section class="card" id="calib">
+  <h2><span class="n">۲</span><span class="en">Probe Tube Calibration</span></h2>
+  <ol class="steps">
+    <li><span class="en">Probe tube</span> نو را روی <span class="en">probe tube port</span> (لوله‌ی فلزی نازک بالای <span class="en">probe</span>) بزنید؛ آرام بچرخانید و تا ته فشار دهید.</li>
+    <li>سر آزاد لوله را در <span class="en">test location</span> روی خود <span class="en">probe</span> بگذارید.</li>
+    <li><span class="en">FreeFit</span> را روبه‌روی بلندگو، در جای سر بیمار نگه دارید.</li>
+    <li>دکمه‌ی <span class="en">power</span> روی <span class="en">FreeFit</span> را <b>کوتاه</b> بزنید (یا آیکون <span class="en">wizard</span> در <span class="en">toolbar</span>). پنجره‌ی <span class="btn">Probe Tube Calibration</span> باز می‌شود و خودکار انجام می‌شود.</li>
+    <li>برای هر دو گوش (<span class="en">binaural</span>) انجام دهید.</li>
+  </ol>
+  <div class="note warn">اگر <span class="en">calibration</span> رد شد: لوله تا نخورده یا با چیزی بسته نشده باشد، و نویز محیط را کم کنید.</div>
+</section>
+
+<section class="card" id="place">
+  <h2><span class="n">۳</span>گذاشتن <span class="en">FreeFit</span> و <span class="en">Probe Tube</span></h2>
+  <div class="kpi">
+    <div><div class="v">28 mm</div><div class="l">زن بزرگسال (از <span class="en">intertragal notch</span>)</div></div>
+    <div><div class="v">30–31 mm</div><div class="l">مرد بزرگسال</div></div>
+    <div><div class="v">20–25 mm</div><div class="l">کودک</div></div>
+    <div><div class="v">+5 mm</div><div class="l">جلوتر از نوک سمعک</div></div>
+  </div>
+  <ol class="steps" style="margin-top:10px">
+    <li><span class="en">FreeFit</span> را دور گردن بیمار بگذارید و <span class="en">ear hook</span>ها با <span class="en">probe</span> را روی گوش‌ها؛ طول را تنظیم کنید.</li>
+    <li>عمق را با <b>حلقه‌ی مشکی (<span class="en">marker ring</span>)</b> روی لوله علامت بزنید. روش مطمئن‌تر: لوله را کنار سمعک یا قالب بگذارید طوری که نوکش <span class="en">5 mm</span> جلوتر از نوک سمعک باشد و حلقه را روی <span class="en">intertragal notch</span> تنظیم کنید.</li>
+    <li>زیر نور <span class="en">otoscope</span> یا با دقت لوله را وارد کنید تا حلقه به <span class="en">intertragal notch</span> برسد. لوله در پایین مجرا باشد.</li>
+    <li>برای <span class="en">REIG</span>: جای لوله در اندازه‌گیری <span class="en">unaided</span> و <span class="en">aided</span> <b>باید یکسان</b> بماند.</li>
+  </ol>
+</section>
+
+<section class="card" id="measure">
+  <h2><span class="n">۴</span>اندازه‌گیری‌ها</h2>
+  <h3 class="sub"><span class="en">Unaided</span> (<span class="en">REUR / REUG</span>)</h3>
+  <ol class="steps">
+    <li>بدون سمعک، لوله در گوش. بیمار ساکت و بی‌حرکت، رو به بلندگو.</li>
+    <li>دکمه‌ی <span class="btn">Unaided</span> در <span class="en">OTOsuite</span> را بزنید. منحنی باید قله‌ی طبیعی حدود <span class="en">2.5–3 kHz</span> داشته باشد؛ منحنی غیرعادی ← جای لوله را چک کنید.</li>
+  </ol>
+  <h3 class="sub"><span class="en">Aided</span> (<span class="en">REAR / REAG</span>) و تطبیق با <span class="en">target</span></h3>
+  <ol class="steps">
+    <li>لوله را با یک دست نگه دارید و سمعک را آرام جا بزنید تا لوله جابه‌جا نشود. سمعک روشن، در برنامه‌ی موردنظر.</li>
+    <li>برای سمعک <span class="en">open fit</span>، در <span class="btn">Fitting Details</span> گزینه‌ی <span class="btn">Use OpenREM calibration</span> را بزنید.</li>
+    <li>اندازه‌گیری <span class="btn">Aided</span> با سیگنال گفتاری در سطوح <span class="en">Soft 50/55</span>، <span class="en">Average 65</span> و <span class="en">Loud 80 dB SPL</span>؛ و در صورت نیاز <span class="en">MPO</span>.</li>
+    <li>منحنی اندازه‌گیری‌شده را با <span class="en">target</span> (خط‌چین) مقایسه کنید. در نرم‌افزار سمعک <span class="en">gain</span> را تنظیم و دوباره اندازه بگیرید تا به <span class="en">target</span> نزدیک شود (طبق معیار مربی).</li>
+    <li>برای <span class="en">REIG</span> بین نماهای <span class="en">Response</span>، <span class="en">Gain</span> و <span class="en">REIG</span> جابه‌جا شوید.</li>
+  </ol>
+  <details>
+    <summary><span class="en">Occluded</span> (<span class="en">REOR / REOG</span>)</summary>
+    <p>سمعک در گوش ولی <b>خاموش</b>؛ برای بررسی اثر <span class="en">vent</span> و <span class="en">occlusion</span>.</p>
+  </details>
+  <details>
+    <summary><span class="en">RECD</span> (معمولاً برای کودکان)</summary>
+    <p>اختلاف پاسخ گوش واقعی با <span class="en">2cc coupler</span>. مراحل و اتصال را طبق راهنمای <span class="en">OTOsuite</span> و با مربی انجام دهید.</p>
+  </details>
+  <details>
+    <summary><span class="en">Speech Mapping</span> (مشاوره)</summary>
+    <p>از بخش <span class="en">Counseling and Simulations</span>؛ برای نشان دادن اینکه گفتار با سمعک در محدوده‌ی شنوایی بیمار قرار می‌گیرد.</p>
+  </details>
+</section>
+
+<section class="card" id="finish">
+  <h2><span class="n">۵</span>پایان کار</h2>
+  <ol class="steps">
+    <li>نتایج را در پرونده‌ی بیمار <span class="en">OTOsuite</span> ذخیره کنید.</li>
+    <li>سمعک را درآورید، بعد لوله را آرام بیرون بکشید. <span class="en">Probe tube</span> را دور بیندازید.</li>
+    <li><span class="en">Ear hook</span>ها، <span class="en">tube guide</span> و بدنه را با دستمال کمی مرطوب با شوینده‌ی ملایم تمیز کنید؛ رطوبت داخل دستگاه نرود.</li>
+    <li><span class="en">FreeFit</span> را خاموش کنید (دکمه را نگه دارید تا چراغ خاموش شود) و در <span class="en">charger</span> بگذارید.</li>
+    <li>هر مشکل را در دفتر دستگاه بنویسید و به کلینیک (<span class="en">021 7753 0636</span>) خبر دهید.</li>
+  </ol>
+</section>
+
+<section class="card" id="trouble">
+  <h2><span class="n o">؟</span><span class="en">Troubleshooting</span></h2>
+  <table class="leg">
+    <tr><td><span class="en">Calibration</span> رد می‌شود</td><td>لوله تا خورده یا بسته است؛ نویز محیط را کم کنید؛ لوله‌ی نو بزنید.</td></tr>
+    <tr><td><span class="en">FreeFit</span> وصل نمی‌شود</td><td>روشن و شارژ بودن؛ فاصله تا کامپیوتر (کمتر از ۱۰ متر)؛ <span class="en">OTOsuite</span> را دوباره باز کنید.</td></tr>
+    <tr><td>منحنی <span class="en">unaided</span> عجیب است</td><td>لوله خیلی کم‌عمق یا به دیواره چسبیده یا با جرم بسته شده؛ دوباره بگذارید.</td></tr>
+    <tr><td><span class="en">Aided</span> با <span class="en">unaided</span> جور درنمی‌آید</td><td>لوله موقع گذاشتن سمعک جابه‌جا شده؛ عمق حلقه را چک کنید.</td></tr>
+    <tr><td>فیدبک (سوت)</td><td>جا افتادن سمعک، لوله‌ای که از زیر قالب نشت ایجاد کرده، یا <span class="en">gain</span> زیاد.</td></tr>
+  </table>
+</section>
+
+<div class="contact" id="contact2">
+  <div><div class="who">سؤال یا مشکل داشتید؟ تماس بگیرید با</div><div class="name">کلینیک شنوایی‌شناسی</div><div class="num">021 7753 0636</div></div>
+  <div class="acts"><a href="tel:02177530636">تماس</a><button type="button" class="copy">کپی شماره</button></div>
+</div>
+
+</main>
+
+<footer>
+  <a class="home" href="index.html">← همه‌ی راهنماها</a><br>
+  بر اساس <span class="en">AURICAL FreeFit User Guide</span> و مقاله‌ی <span class="en">Real-Ear Measurement: Basic Terminology and Procedures (Pumford &amp; Sinclair)</span>. انتخاب <span class="en">target rule</span> و معیار تطبیق با مربی است. این راهنما جایگزین آموزش حضوری نیست.
+</footer>
+
+<script>
+(function(){
+  var boxes=[].slice.call(document.querySelectorAll('#checklist input'));
+  var prog=document.getElementById('prog');
+  var fa=function(n){return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]});};
+  function upd(){var c=boxes.filter(function(b){return b.checked}).length;prog.textContent=fa(c)+' از '+fa(boxes.length)+' انجام شده';
+    try{sessionStorage.setItem('rem-check',JSON.stringify(boxes.map(function(b){return b.checked})));}catch(e){}}
+  try{var s=JSON.parse(sessionStorage.getItem('rem-check')||'null');if(s)boxes.forEach(function(b,i){b.checked=!!s[i]});}catch(e){}
+  boxes.forEach(function(b){b.addEventListener('change',upd)});
+  document.getElementById('reset').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});upd();});
+  document.querySelectorAll('.contact .copy').forEach(function(btn){btn.addEventListener('click',function(){
+    var done=function(){btn.textContent='کپی شد';setTimeout(function(){btn.textContent='کپی شماره'},1600)};
+    try{navigator.clipboard.writeText('02177530636').then(done,function(){sel(btn)});}catch(e){sel(btn)}
+  })});
+  function sel(btn){var n=btn.closest('.contact').querySelector('.num');var r=document.createRange();r.selectNodeContents(n);var g=getSelection();g.removeAllRanges();g.addRange(r);}
+  upd();
+})();
+</script>
+
+</body>
+</html>
